@@ -53,7 +53,17 @@ function runEnter() {
 
   console.log(inputValue1, inputValue2, inputValue3, inputValue4);
 
-  var filteredData = tableData.filter(tableData => tableData.datetime === inputValue1 && tableData.city === inputValue2 && tableData.state === inputValue3 && tableData.country === inputValue4);
+  var filteredData = tableData.filter(tableData => 
+    {if (inputValue1) {
+      tableData.datetime === inputValue1
+    } && if (inputValue2) {
+      tableData.city === inputValue2
+    } && if (inputValue3) {
+      tableData.state === inputValue3
+    } && if (inputValue4) {
+      tableData.country === inputValue4
+    }
+    });
 
   console.log(filteredData);
 
